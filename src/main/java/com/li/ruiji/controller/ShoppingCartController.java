@@ -74,4 +74,16 @@ public class ShoppingCartController {
         return R.success(list);
     }
 
+
+    //清空购物车
+    @DeleteMapping("/clean")
+    public R<String> clean(){
+        //SQL : delete from shopping_cart where user_id = ?
+        LambdaQueryWrapper<ShoppingCart> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(ShoppingCart::getUserId,BaseContext.getCurrentId());
+        shoppingCartService.remove(queryWrapper);
+
+        return R.success("清空购物车成功");
+    }
+
 }

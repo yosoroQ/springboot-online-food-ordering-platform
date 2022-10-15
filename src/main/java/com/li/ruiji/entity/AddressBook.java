@@ -1,4 +1,4 @@
-package com.li.ruiji.controller;
+package com.li.ruiji.entity;
 
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;
@@ -86,7 +86,7 @@ public class AddressBook implements Serializable {
     @TableField(fill = FieldFill.INSERT_UPDATE)
     private Long updateUser;
 
-
-    //是否删除
-    private Integer isDeleted;
+//
+//    //是否删除
+//    private Integer isDeleted;
 }
